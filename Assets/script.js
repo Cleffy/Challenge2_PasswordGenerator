@@ -22,21 +22,11 @@ function getLength(){
 //   charCase: an array of 4 booleans.
 function determineTypeCount(length, charCase){
   var count = [0, 0, 0, 0];
-  if(charCase[0]){
-      count[0]++;
+  for(index in charCase){
+    if(charCase[index]){
+      count[index]++;
       length--;
-  }
-  if(charCase[1]){
-    count[1]++;
-    length--;
-  }
-  if(charCase[2]){
-    count[2]++;
-    length--;
-  }
-  if(charCase[3]){
-    count[3]++;
-    length--;
+    }
   }
 
   while(length > 0){
