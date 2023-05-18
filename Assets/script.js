@@ -16,50 +16,6 @@ function getLength(){
   }
   return length;
 }
-//Asks user if they want to use Upper case letters.
-function getUpperCase(){
-  switch(prompt("Do you want an upper case letter?", "Y/N").toUpperCase()){
-    case "Y":
-      return true;
-    case "N":
-      return false;
-    default:
-      return getUpperCase();
-  }
-}
-//Asks user if they want to use Lower case letters.
-function getLowerCase(){
-    switch(prompt("Do you want an lower case letter?", "Y/N").toUpperCase()){
-    case "Y":
-      return true;
-    case "N":
-      return false;
-    default:
-      return getLowerCase();
-  }
-}
-//Asks user if they want to use numerical digits.
-function getNumeric(){
-    switch(prompt("Do you want numerical digits?", "Y/N").toUpperCase()){
-    case "Y":
-      return true;
-    case "N":
-      return false;
-    default:
-      return getNumeric();
-  }
-}
-//Asks user if they want to use special characters.
-function getSpecial(){
-    switch(prompt("Do you want special characters?", "Y/N").toUpperCase()){
-    case "Y":
-      return true;
-    case "N":
-      return false;
-    default:
-      return getSpecial();
-  }
-}
 
 // Randomly determines how many of each character type to use.
 //   length: The length of the password.
@@ -155,11 +111,11 @@ function generatePassword(){
   var length = getLength();
   var charCase = [false, false, false, false];
   while(charCase[0] == false && charCase[1] == false){
-    charCase[0] = getUpperCase();
-    charCase[1] = getLowerCase();
+    charCase[0] = confirm("Do you want upper case letters?");
+    charCase[1] = confirm("Do you want lower case letters?");
   }
-  charCase[2] = getNumeric();
-  charCase[3] = getSpecial();
+  charCase[2] = confirm("Do you want numerical digits?");
+  charCase[3] = confirm("Do you want special characters?");
 
   return randomCharacters(length, determineTypeCount(length, charCase));
 }
