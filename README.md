@@ -4,6 +4,9 @@
 Front-end random password generator
 
 ## Usage
+https://cleffy.github.io/Challenge2_PasswordGenerator/
+![Password Generator Sample](/Assets/passwordGenerator.jpeg "Password Generator")
+
 When the user clicks generate password they are given a series of prompts to define the password.
 Prompts
 How long do you want the password?
