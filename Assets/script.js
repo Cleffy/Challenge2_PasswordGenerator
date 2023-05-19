@@ -5,9 +5,6 @@ const char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 const num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const spec = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', '}', ']', '|', ';', ':', ',', '<', '>', '.', '/', '?'];
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
 //Asks user for length of password
 function getLength(){
   var length = Number(prompt("Please enter password length:", "8-128"));
@@ -110,6 +107,10 @@ function generatePassword(){
   return randomCharacters(length, determineTypeCount(length, charCase));
 }
 
+// Area below provided by UCB Extension //
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -121,3 +122,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+// Area above provided by UCB Extension //
